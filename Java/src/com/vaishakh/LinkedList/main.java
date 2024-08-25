@@ -10,7 +10,12 @@ public class main {
         list.tail_insert(5);
         list.insert_position(21,3);
         list.display();
-        System.out.println("Deleted element is "+list.head_delete());
+        System.out.println(list.head_delete());
         list.display();
+        System.out.println(list.tail_delete());
+        list.display();
+        System.out.println(list.index_delete(2));
+        list.display();
+        System.out.println("Value is present at node "+(list.search(2)+1));
     }
 }
