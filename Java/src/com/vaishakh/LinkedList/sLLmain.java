@@ -1,8 +1,8 @@
 package com.vaishakh.LinkedList;
 
-public class main {
+public class sLLmain {
     public static void main(String[] args) {
-        LL list = new LL();
+        sLL list = new sLL();
         list.head_insert(1);
         list.head_insert(2);
         list.head_insert(3);

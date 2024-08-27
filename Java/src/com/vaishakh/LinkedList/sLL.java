@@ -1,6 +1,6 @@
 package com.vaishakh.LinkedList;
 
-public class LL {
+public class sLL {
     //defining the structure of a linked list
     private class Node {
         private int value;
@@ -22,7 +22,7 @@ public class LL {
 //defining the size of the linkedlist
     private int size;
 
-    public LL() {
+    public sLL() {
         this.size = 0;
     }
 //function to add an element at the beginning of the linked list
@@ -33,7 +33,7 @@ public class LL {
          if (tail == null){
              tail = head;
          }
-         size +=1;
+         size ++;
     }
 //function to add an element at the end of a linkedlsit
     public void tail_insert(int val){
