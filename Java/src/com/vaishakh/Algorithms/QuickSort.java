@@ -1,11 +1,8 @@
 package com.vaishakh.Algorithms;
-
 import java.util.Arrays;
 import java.util.Scanner;
-
-
-public class quicksort{
-    public static void quicksort(int[] nums,int low,int high){
+public class QuickSort{
+    public static void QuickSort(int[] nums,int low,int high){
         if (low > high){
             return;
         }
@@ -28,8 +25,8 @@ public class quicksort{
                 e--;
             }
         }
-        quicksort(nums,low,e);
-        quicksort(nums,s,high);
+        QuickSort(nums,low,e);
+        QuickSort(nums,s,high);
     }
 
 
@@ -42,7 +39,7 @@ public class quicksort{
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }   
-        quicksort(arr,0,n-1);
+        QuickSort(arr,0,n-1);
         System.out.println(Arrays.toString(arr));
     }
 
