@@ -60,6 +60,8 @@ public class file {
             return;
         } catch (IOException e) {
             System.out.println("error reading or writing file : " + e.getMessage());
+        }finally{
+            sc.close();
         }
     }
 
