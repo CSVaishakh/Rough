@@ -1,0 +1,67 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class SquareRootCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        StringBuilder numbers = new StringBuilder();
+        for (int i = 1; i <= number; i++) {
+            numbers.append(i).append(" ");
+        }
+
+        StringTokenizer tokenizer = new StringTokenizer(numbers.toString());
+
+        System.out.println("Square roots of integers from 1 to " + number + ":");
+        while (tokenizer.hasMoreTokens()) {
+            int num = Integer.parseInt(tokenizer.nextToken());
+            double sqrt = Math.sqrt(num);
+            System.out.printf("The square root of %d is %.2f%n", num, sqrt);
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class PrimeFileProcessor {
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        if (n <= 3) return true;
+        if (n % 2 == 0 || n % 3 == 0) return false;
+        for (int i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        try {
+            File inputFile = new File("input.txt");
+            File outputFile = new File("output.txt");
+            Scanner scanner = new Scanner(inputFile);
+            FileWriter writer = new FileWriter(outputFile);
+
+            while (scanner.hasNextInt()) {
+                int number = scanner.nextInt();
+                if (isPrime(number)) {
+                    writer.write(number + "\n");
+                }
+            }
+
+            scanner.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
